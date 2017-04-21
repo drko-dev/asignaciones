@@ -33,15 +33,4 @@ class usuarioRepository extends EntityRepository
 			 			)
 			 		->getResult();
 	}
-
-	public function unicoUsuario($id)
-	{
-		return $this->getEntityManager()
-			 		->createQuery(
-			 			'SELECT u FROM UsuarioBundle:Usuario u
-			 			WHERE u.id = :id'
-			 			)
-			 		->setParameter('id', $id)
-			 		->getResult();
-	}
 }

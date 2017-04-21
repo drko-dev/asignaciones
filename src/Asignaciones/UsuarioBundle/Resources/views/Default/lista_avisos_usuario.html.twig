@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+      <div class="container">
+        <h2>Lista avisos usuario: <strong>{#{ avisos.id }#}</strong></h2>
+        <div class="row well">
+            <table class="table table-striped">
+                <tr>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>Publicado</th>
+                    <th>Fecha publicacion</th>
+                    <th>Fecha actualizacion</th>
+                    <th>Actualizar</th>
+                    <th>Eliminar</th>
+                </tr>
+                {% for avi in avisos%}
+                <tr>
+                    <td>{{avi.titulo}}</td>
+                    <td>{{avi.descripcion}}</td>
+                    <td>{{avi.estado}}</td>
+                    <td>{{avi.fechaCreacion | date('Y-m-d')}}</td>
+                    <td>{{avi.fechaActualizacion | date('Y-m-d')}}</td>
+                    <td><a href="{{ path('aviso_usuario_actualizar', { usuario_id : avi.username , aviso_id : avi.id }) }}">actualizar</a></td>
+                    <td><a href="{{ path('aviso_usuario_eliminar', { aviso_id : avi.id  }) }}">eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="row well">
+        <a href="{{ path('aviso_usuario_agregar', { id : id }) }}" class="btn btn-default" role="button">Agregar aviso</a>
+    </div>
+</div>
+{% endblock %}
+{% endblock %}
+

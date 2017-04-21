@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+      <div class="container">
+        <h2>Lista de usuarios</h2>
+        <div class="row well">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Nivel</th>
+                    <th>Fecha alta</th>
+                    <th>Fecha actualizacion</th>
+                    <th>Activo</th>
+                    <th>Avisos</th>
+                    <th>Actualizar usuario</th>
+                    <th>Eliminar usuario</th>
+                </tr>
+                
+                {% for u in usuarios%}
+                    <tr>
+                        <td>{{u.username}}</td>
+                        <td>{{u.nombre}}</td>
+                        <td>{{u.apellido}}</td>
+                        <td>{{u.email}}</td>
+                        <td>{{u.role}}</td>
+                        <td>{{u.fecha_alta | date('Y-m-d')}}</td>
+                        <td>{{u.fecha_actualizacion | date('Y-m-d')}}</td>
+                        <td>{{u.esta_activo}}</td>
+                        <td><a href="{{ path('ver_avisos_usuario', { id : u.id }) }}">Ver ( {{ u.numeroAvisos }} )</a></td>
+                        <td><a href="{{ path('usuario_actualizar', { id : u.id }) }}">actualizar</a></td>
+                        <td><a href="{{ path('usuario_eliminar', {id : u.id }) }}">eliminar</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    <div class="row well">
+        <a href="{{ path('usuario_agregar') }}" class="btn btn-default" role="button">Agregar usuario</a>
+    </div>
+</div>
+{% endblock %}
+{% endblock %}
+

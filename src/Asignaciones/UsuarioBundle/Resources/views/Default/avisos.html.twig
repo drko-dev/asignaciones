@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% block content %}
+        <div class="container">
+        <h1>Avisos Casificados</h1>
+        <div class="row well">
+            {% for a in avisos %}
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0 col-lg-4 col-lg-offset-0 text-center">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><strong>Titulo: </strong>{{ a.titulo }}</div>
+                        <div class="panel-body"><strong>Descripcion: </strong>{{ a.descripcion }}</div>
+                        <div class="panel-footer"><strong>Usuario: </strong>{{ a.username.nombre }} {{ a.username.apellido }}</div>
+                    </div>
+                </div> 
+            {% endfor %}     	
+        </div>
+        </div> 
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Probando symfony!{% endblock %}</title>
+  {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('recursos/css/bootstrap.min.css') }}" />
+  {% endblock %}
+  <style>
+    .panel-heading {
+     background-color: gray !important;
+   }
+
+   .panel-primary {
+    border-color: gray;
+  }
+ 
+</style>                              
+</head>
+<body>
+  <nav class = "navbar navbar-default" role = "navigation">
+   <div class = "navbar-header">
+    <a class = "navbar-brand" href = "#">Gustavo</a>
+  </div>
+  <div>
+    <ul class = "nav navbar-nav">
+     <li><a href = "/avisos/ver">Avisos</a></li>
+     <li><a href = "/usuarios">Usuarios</a></li>
+ </ul>
+</div>
+
+</nav>
+{% block body %}{% endblock %}
+  {% block javascripts %}
+    <script src="{{ asset('recursos/js/bootstrap.min.js') }}"> </script>
+    <script src="{{ asset('recursos/js/jquery-3.2.1.min.js') }}"> </script>
+  {% endblock %}
+</body>
+</html>

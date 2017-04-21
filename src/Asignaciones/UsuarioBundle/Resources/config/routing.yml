@@ -1,0 +1,73 @@
+usuario_lista:
+    pattern:  /usuarios
+    defaults: { _controller: UsuarioBundle:Default:usuario }
+
+usuario_agregar:
+    pattern:  /usuarios/agregar
+    defaults: { _controller: UsuarioBundle:Default:agregar }
+
+usuario_eliminar:
+    pattern:  /usuarios/eliminar/{id}
+    defaults: { _controller: UsuarioBundle:Default:eliminar }
+
+usuario_actualizar:
+    pattern:  /usuarios/actualizar/{id}
+    defaults: { _controller: UsuarioBundle:Default:actualizar }
+
+
+
+ver_avisos: 
+    pattern:  /avisos/ver
+    defaults: { _controller: UsuarioBundle:Default:avisos }
+
+ver_avisos_usuario: 
+    pattern:  /avisos/ver_usuario/{id}
+    defaults: { _controller: UsuarioBundle:Default:avisosVerUsuario }
+
+ver_aviso_usuario_id:
+    pattern:  /avisos/usuario_id/{id}
+    defaults: { _controller: UsuarioBundle:Default:avisoUsuarioId}
+
+aviso_usuario_agregar:
+    pattern:  /avisos/aviso_agregar/usuario/{id}
+    defaults: { _controller: UsuarioBundle:Default:avisoAgregar}
+
+aviso_usuario_actualizar:
+    pattern:  /avisos/aviso_actualizar/{aviso_id}/usuario/{usuario_id}
+    defaults: { _controller: UsuarioBundle:Default:avisoActualizar}
+
+aviso_usuario_eliminar:
+    pattern:  /avisos/aviso_eliminar/aviso/{aviso_id}
+    defaults: { _controller: UsuarioBundle:Default:avisoEliminar}
+
+
+
+admin:
+    pattern:  /admin
+    defaults: { _controller: UsuarioBundle:Admin:index }
+
+login:
+    pattern: /admin/login
+    defaults: { _controller: UsuarioBundle:Admin:login }
+
+login_check:
+    pattern: /admin/login_check
+
+logout:
+    pattern: /admin/logout 
+
+
+
+admin_p:
+    pattern:  /privado
+    defaults: { _controller: UsuarioBundle:Privado:index }
+
+login_p:
+    pattern: /privado/login
+    defaults: { _controller: UsuarioBundle:Privado:login }
+
+login_check_p:
+    pattern: /privado/login_check
+
+logout_p:
+    pattern: /privado/logout 

@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	{% block content %}
+		<div class="container">
+			<h2>Crear nuevo aviso</h2>
+			<div class="row well">
+				<div class="col-md-6 col-md-offset-3">
+					<form role = "form" action=" {{ path('aviso_usuario_agregar', { id : id_usuario }) }} " method="post" {{ form_enctype(formulario) }} >
+						<div class="form-group">
+							{{ form_label(formulario.titulo) }}
+							{{ form_widget(formulario.titulo, { 'attr' : { 'class' : 'form-control', 'placeholder' : 'Agregue el titulo del aviso.' }})  }}
+							<span class="text-danger">{{ form_errors(formulario.titulo) }}</span>
+						</div>
+
+						<div class="form-group">
+							{{ form_label(formulario.descripcion) }}
+							{{ form_widget(formulario.descripcion, { 'attr' : { 'class' : 'form-control', 'placeholder' : 'Descripcion del aviso' }})  }}
+							<span class="text-danger">{{ form_errors(formulario.descripcion) }}</span>
+						</div>
+
+						<div class="checkbox">
+							<label>
+								{{ form_widget(formulario.estado) }} Publicar
+								<span class="text-danger">{{ form_errors(formulario.estado) }}</span>
+							</label>
+						</div>
+
+						<div class="form-group">
+						<label for="">Usuario: </label>
+						{{ form_widget(formulario.username, {'value' : id_usuario }) }}
+						<span class="text-danger">{{ form_errors(formulario.descripcion) }}</span>
+						</div>
+
+						<input class="btn btn-default" type="submit" value="Agregar" />
+					</form>
+				</div>
+			</div>
+		</div>
+	{% endblock %}                	
+{% endblock %}

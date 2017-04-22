@@ -38,10 +38,12 @@ class DefaultController extends Controller
             $usuario->getSalt());
             $usuario->setPassword($passwordCodificado);
 
-			$em = $this->getDoctrine()->getEntityManager();
-			$em->persist($usuario);
-			$em->flush();
-			return $this->redirect($this->generateUrl('usuario_lista'));
+			$this->get('manejadorusuario')->guardar($usuario);
+   //          $em = $this->getDoctrine()->getEntityManager();
+			// $em->persist($usuario);
+			// $em->flush();
+			
+            return $this->redirect($this->generateUrl('usuario_lista'));
     	}
     	return $this->render('UsuarioBundle:Default:agregar_usuario.html.twig', array('formulario' => $formulario->createView()));
     }

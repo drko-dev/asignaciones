@@ -26,6 +26,13 @@ class PrivadoController extends Controller
 
     public function indexAction()
     {
-        return $this->render('UsuarioBundle:Privado:index.html.twig');
+        //llamo la variable de session 
+        $usuario = $this->getUser();
+        $id = $usuario->getId();
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $avisos = $em->getRepository('UsuarioBundle:Avisos')->avisosListaUsuario($id);
+
+        return $this->render('UsuarioBundle:Privado:index.html.twig', array('usuario' => $usuario, 'avisos' => $avisos));
     }
 }

@@ -167,4 +167,12 @@ class DefaultController extends Controller
         return $this->render('UsuarioBundle:Default:inicio.html.twig');
 
     }
+
+
+    public function helloAction($name)
+    {
+         return $this->render('UsuarioBundle:Default:hello.html.twig', array('name' => $name));
+        //return array('name' => $name);
+    }
+
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace Asignaciones\UsuarioBundle\Servicios;
+
 use Asignaciones\UsuarioBundle\Entity\Usuario;
 use Doctrine\Common\Persistence\ObjectManager;
 

@@ -1,4 +1,4 @@
 services:
     manejadorusuario:
         class: Asignaciones\UsuarioBundle\Servicios\ManejadorUsuario
-        arguments: ['@doctrine.orm.entity_manager', '@security.encoder_factory']
+        arguments: ['@doctrine.orm.entity_manager']

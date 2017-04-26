@@ -15,6 +15,11 @@ usuario_actualizar:
     defaults: { _controller: UsuarioBundle:Default:actualizar }
 
 
+hello:
+    pattern: /hola/{name}
+    defaults: { _controller: UsuarioBundle:Default:hello}
+
+
 
 ver_avisos: 
     pattern:  /avisos/ver

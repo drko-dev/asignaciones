@@ -16,7 +16,7 @@ usuario_actualizar:
 
 
 hello:
-    pattern: /hola/{name}
+    pattern:  /hola/{name}
     defaults: { _controller: UsuarioBundle:Default:hello}
 
 
@@ -45,21 +45,6 @@ aviso_usuario_eliminar:
     pattern:  /avisos/aviso_eliminar/aviso/{aviso_id}
     defaults: { _controller: UsuarioBundle:Default:avisoEliminar}
 
-
-
-admin:
-    pattern:  /admin
-    defaults: { _controller: UsuarioBundle:Admin:index }
-
-login:
-    pattern: /admin/login
-    defaults: { _controller: UsuarioBundle:Admin:login }
-
-login_check:
-    pattern: /admin/login_check
-
-logout:
-    pattern: /admin/logout 
 
 
 

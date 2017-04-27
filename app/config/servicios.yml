@@ -2,3 +2,14 @@ services:
     manejadorusuario:
         class: Asignaciones\UsuarioBundle\Servicios\ManejadorUsuario
         arguments: ['@doctrine.orm.entity_manager']
+
+services:
+    # ...
+    sonata.cupon.admin.oferta:
+        class: Asignaciones\UsuarioBundle\Admin\UsuarioAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Lista usuarios', label: Usuarios }
+        arguments:
+            - null
+            - Asignaciones\UsuarioBundle\Entity\Usuario
+            - UsuarioBundle:Admin

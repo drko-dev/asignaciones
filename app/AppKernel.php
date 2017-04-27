@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 
 
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -61,25 +61,23 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        sonata.admin.block.admin_list:
-            contexts: [admins]
-        sonata.block.service.text: ~
-        sonata.block.service.action: ~
-        sonata.block.service.rss: ~
-
+#Descomenta las siguientes líneas para probar Sonata Admin Bundle
 sonata_admin:
-    title: 'Cupon - Backend'
-    title_logo: /bundles/backend/logotipo.png
-
-sonata_admin:
-    title: 'Cupon - Backend'
-    title_logo: /bundles/backend/logotipo.png
+    title:      'Usuarios - Backend'
+    title_logo: /recursos/imagenes/logo.png
     templates:
         layout: SonataAdminBundle::standard_layout.html.twig
         ajax: SonataAdminBundle::ajax_layout.html.twig
         list: SonataAdminBundle:CRUD:list.html.twig
         show: SonataAdminBundle:CRUD:show.html.twig
         edit: SonataAdminBundle:CRUD:edit.html.twig
+
+sonata_block:
+   default_contexts: [cms]
+   blocks:
+       sonata.admin.block.admin_list:
+           contexts:   [admin]
+
+       sonata.block.service.text:   ~
+       sonata.block.service.action: ~
+       sonata.block.service.rss:    ~

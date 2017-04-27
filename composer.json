@@ -23,7 +23,9 @@
         "kriswallsmith/assetic": "1.1.*@dev",
         "ircmaxell/password-compat": "~1.0.3",
         "sonata-project/admin-bundle": "2.x",
-        "sonata-project/doctrine-orm-admin-bundle": "2.x"
+        "sonata-project/doctrine-orm-admin-bundle": "2.x",
+        "knplabs/knp-menu-bundle": "2.x",
+        "knplabs/knp-menu": "2.x"
     },
     "scripts": {
         "post-install-cmd": [
